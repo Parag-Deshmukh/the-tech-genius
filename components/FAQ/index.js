@@ -28,12 +28,12 @@ const faqData = [
 const FAQ = () => {
     return (
         <div className="max-w-screen-xl mx-auto px-5 md:px-8 lg:px-16 bg-white min-h-screen">
-            <div id="about-us" className="max-w-4xl mx-auto py-16">
+            <div id="about-us" className="max-w-4xl mx-auto py-10">
                 <h4 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center leading-snug text-gray-800">
                     Frequently Asked Questions
                 </h4>
             </div>
-            <div className="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
+            <div className="grid divide-y divide-neutral-200 max-w-xl mx-auto ">
                 {faqData.map((faq, index) => (
                     <div className="py-5" key={index}>
                         <details className="group" open={index === 0}>
