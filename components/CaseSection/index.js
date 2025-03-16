@@ -1,4 +1,4 @@
-
+import { useRef } from "react";
 
 // Define the ParticleBg component
 // const ParticleBg = () => (
@@ -66,54 +66,52 @@ const articles = [
 ];
 
 // Your existing CasesSection component
-const CasesSection = () => (
-    <section>
-        <div className="w-full min-h-screen bg-gray-900 relative">
-            <div className="absolute left-0 top-0 h-screen w-full overflow-hidden">
-                {/* <ParticleBg /> */}
-            </div>
-            <div className="max-w-7xl mx-4 lg:mx-auto pt-20 lg:pt-40">
-                <h1 className="text-white text-4xl lg:text-7xl font-bold text-center">
-                    Our Courses
-                </h1>
-                <p className="text-white text-gray-400 text-center text-xl mt-12">
-                    Explore our courses designed to help you build real-world skills in IoT, Robotics, and AI!
-                </p>
-                <div id="courses" className="mx-auto pt-24">
-                    <div className="w-full flex flex-wrap justify-around">
-                        {articles.map((article) => (
-                            <div
-                                key={article.title}
-                                className="xl:w-1/3 sm:w-5/12 sm:max-w-xs relative mb-32 lg:mb-20 xl:max-w-sm lg:w-1/2 w-11/12 mx-auto sm:mx-0 cursor-pointer transition delay-75 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-                            >
-                                <div className="h-64 z-20">
-                                    <img
-                                        src={article.image}
-                                        alt={article.alt}
-                                        className="h-full w-full object-cover overflow-hidden rounded"
-                                        width={400}
-                                        height={300}
-                                    />
-                                </div>
-                                <div className="p-4 shadow-lg w-full mx-auto -mt-8 bg-white rounded-b z-30 relative">
-                                    <p className="uppercase text-sm text-gray-700 text-center pb-1">
-                                        {article.name}
-                                    </p>
-                                    <p className="text-gray-500 text-center pb-1 text-sm">
-                                        {article.title}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                        <span
-                            className=" -mt-8 pb-12 lg:mt-4 flex items-center text-xl text-indigo-400 cursor-pointer z-30 hover:text-indigo-600"
+const CasesSection = () => {
+    const sectionRef = useRef(null);
+    return (
+        <section ref={sectionRef} className="bg-gray-900 min-h-screen py-12 md:py-20 relative overflow-hidden">
+            
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <div className="text-center mb-12 md:mb-16">
+                    <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                        Our Courses
+                    </h1>
+                    <p className="mt-4 text-gray-400 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
+                        Explore our courses designed to help you build real-world skills in IoT, Robotics, and AI!
+                    </p>
+                </div>
+
+                <div id="courses" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    {articles.map((article) => (
+                        <div
+                            key={article.name}
+                            className="group bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl mx-auto w-full max-w-sm"
                         >
-                        </span>
-                    </div>
+                            <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
+                                <img
+                                    src={article.image}
+                                    alt={article.alt}
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    width={400}
+                                    height={300}
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div className="p-4 sm:p-6">
+                                <h3 className="text-sm sm:text-base uppercase text-gray-700 font-semibold text-center mb-2">
+                                    {article.name}
+                                </h3>
+                                <p className="text-gray-600 text-sm sm:text-base text-center line-clamp-3">
+                                    {article.title}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 export default CasesSection;
+

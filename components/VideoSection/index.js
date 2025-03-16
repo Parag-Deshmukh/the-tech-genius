@@ -1,6 +1,6 @@
 const VideoSection = () => (
-    <section className="bg-gradient-to-b from-gray-50 to-white">
-        <div className="mb-16 text-center">
+    <section className="bg-gradient-to-b to-white">
+        <div className="text-center">
             <h2 id="live-projects" className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
                 Turn Knowledge into Real-World Impact!
             </h2>

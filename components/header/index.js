@@ -53,7 +53,7 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-white min-h-screen py-16">
+        <header className="bg-white min-h-screen flex items-center py-12 md:py-20">
             <div className="max-w-4xl mx-auto px-6 sm:px-8">
                 <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-8xl text-center leading-snug text-gray-800">
                     "Empowering Young Innovators in IoT, Robotics, and AI!"
